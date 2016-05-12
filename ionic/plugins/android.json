@@ -31,6 +31,9 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "XXXXXXX",
             "PACKAGE_NAME": "com.ionicframework.ionic570099"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.ionicframework.ionic570099"
         }
     },
     "dependent_plugins": {

@@ -1,13 +1,7 @@
 angular.module('starter.controllers')
     .controller('ClientCheckoutCtrl', [
-        '$scope','$state','$cart','ClientOrder','$ionicLoading','$ionicPopup','Cupom',  'User',
-        function ($scope, $state, $cart, ClientOrder, $ionicLoading, $ionicPopup, Cupom, User) {
-
-           /* User.authenticated({include: 'client'},function (data) {
-                  console.log(data.data);
-            }, function (responseError) {
-            '$cordovaBarcodeScanner', $cordovaBarcodeScanner
-            }); */
+        '$scope','$state','$cart','ClientOrder','$ionicLoading','$ionicPopup','Cupom',  'User','$cordovaBarcodeScanner',
+        function ($scope, $state, $cart, ClientOrder, $ionicLoading, $ionicPopup, Cupom, User, $cordovaBarcodeScanner) {
 
 
             var cart = $cart.get();
@@ -66,7 +60,7 @@ angular.module('starter.controllers')
 
            $scope.readBarCode = function () {
 
-               /* $cordovaBarcodeScanner
+               $cordovaBarcodeScanner
                    .scan()
                    .then(function(barcodeData) {
                        getValueCupom(barcodeData.text);
@@ -75,7 +69,7 @@ angular.module('starter.controllers')
                            title: 'Erro',
                            template: 'Não foi possivel ler o código de barras - Tente Novamente'
                        });
-                   }); */
+                   }); 
 
            };
 
