@@ -39,11 +39,10 @@ angular.module('starter.controllers')
                                 //console.log(position);
                                 if(!lat) {
                                     lat = position.coords.latitude;
-                                    long = position.coords.longitude;
+                                    long = position.coords.longitude;    //Remover e tirar daqui a variavel
                                 }else {
                                     long -= 0.0444;
                                 }
-
 
                                 DeliverymanOrder.geo({id: $stateParams.id}, {
                                     lat:  lat,

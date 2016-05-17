@@ -8,37 +8,37 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "XXXXXXX",
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
-        },
-        "phonegap-plugin-barcodescanner": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ionicframework.ionic570099"
+            "PACKAGE_NAME": "codeeducation.codedelivery.com"
         }
     }
 }

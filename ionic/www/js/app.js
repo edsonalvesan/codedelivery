@@ -6,14 +6,20 @@
 angular.module('starter.controllers',[]);
 angular.module('starter.services',[]);
 angular.module('starter.filters',[]);
+angular.module('starter.run',[]);
 
 angular.module('starter', [
-    'ionic','ionic.service.core','starter.controllers','starter.services','starter.filters',
-    'angular-oauth2','ngResource', 'ngCordova','uiGmapgoogle-maps', 'pusher-angular'
+    'ionic','ionic.service.core','starter.controllers','starter.services','starter.filters','starter.run',
+    'angular-oauth2','ngResource', 'ngCordova','uiGmapgoogle-maps', 'pusher-angular','permission','http-auth-interceptor'
 ])
     .constant('appConfig',{
         baseUrl: 'http://10.0.0.150/',
-        pusherKey: '50f40b503dce374af2e4'
+        pusherKey: '50f40b503dce374af2e4',
+        redirectAfterLogin:{
+            client: 'client.order',
+            deliveryman: 'deliveryman.order',
+            admin: 'client.order'
+        }
     })
     .run(function($ionicPlatform, $window, appConfig, $localStorage) {
         $window.client = new Pusher(appConfig.pusherKey);
@@ -67,23 +73,26 @@ angular.module('starter', [
 
       $stateProvider
           .state('login',{
+           cache: false,
            url: '/login',
            templateUrl: 'templates/login.html',
            controller: 'LoginCtrl'
           })
-          .state('home',{
-            url: '/home',
-            templateUrl: 'templates/home.html',
-            controller: function ($scope) {
-                
-            }
+          .state('logout',{
+
+              controller: 'LogoutCtrl'
           })
           .state('client', {
               abstract: true,
               cache: false,
               url: '/client',
               templateUrl: 'templates/client/menu.html',
-              controller: 'ClientMenuCtrl'
+              controller: 'ClientMenuCtrl',
+              data: {
+                  permissions:{
+                      only: ['client-role']
+                  }
+              }
           })
           .state('client.order', {
               url: '/order',
@@ -128,7 +137,12 @@ angular.module('starter', [
               cache: false,
               url: '/deliveryman',
               templateUrl: 'templates/deliveryman/menu.html',
-              controller: 'DeliverymanMenuCtrl'
+              controller: 'DeliverymanMenuCtrl',
+              data: {
+                  permissions:{
+                      only: ['deliveryman-role']
+                  }
+              }
           })
           .state('deliveryman.order', {
               cache: false,
@@ -171,6 +185,11 @@ angular.module('starter', [
                    writable: true
                }
            });
+            return $delegate;
+        }]);
+
+        $provide.decorator('oauthInterceptor',['$delegate',function ($delegate) {
+            delete $delegate['responseError'];
             return $delegate;
         }]);
 

@@ -42,17 +42,17 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/phonegap-plugin-push/www/push.js",
-        "id": "phonegap-plugin-push.PushNotification",
-        "clobbers": [
-            "PushNotification"
-        ]
-    },
-    {
         "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
         "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
         "clobbers": [
             "cordova.plugins.barcodeScanner"
+        ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "id": "phonegap-plugin-push.PushNotification",
+        "clobbers": [
+            "PushNotification"
         ]
     }
 ];
@@ -67,8 +67,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-whitelist": "1.2.2",
     "ionic-plugin-keyboard": "2.0.1",
-    "phonegap-plugin-push": "1.6.3",
-    "phonegap-plugin-barcodescanner": "5.0.0"
+    "phonegap-plugin-barcodescanner": "5.0.0",
+    "phonegap-plugin-push": "1.6.3"
 };
 // BOTTOM OF METADATA
 });
